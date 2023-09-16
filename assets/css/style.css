@@ -306,7 +306,10 @@ main {
   min-width: 259px;
 }
 
-
+.a-projects {
+  color: inherit; /* Eredita il colore dal testo circostante */
+  text-decoration: none; /* Rimuove il sottolineato di default */
+}
 
 
 
