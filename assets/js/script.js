@@ -50,11 +50,8 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 
-
-
-
 // custom select variables
-const select = document.querySelector("[data-select]");
+const select = document.querySelector("[data-page]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
@@ -155,3 +152,71 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+const skillsList = document.querySelector(".skills-list");
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+const skillsItems = document.querySelectorAll(".skills-item");
+const skillsPerPage = 5; // Numero di skills per pagina
+let currentPage = 0;
+const buttonStyle = `
+  padding: 8px 16px;
+  background-color: var(--onyx);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 10px
+`;
+prevButton.addEventListener("click", () => {
+    if (currentPage > 0) {
+        currentPage--;
+        updateSkills();
+    }
+});
+
+nextButton.addEventListener("click", () => {
+    if (currentPage < Math.ceil(skillsItems.length / skillsPerPage) - 1) {
+        currentPage++;
+        updateSkills();
+    }
+});
+
+function updateSkills() {
+    const startIndex = currentPage * skillsPerPage;
+    const endIndex = startIndex + skillsPerPage;
+
+    skillsItems.forEach((item, index) => {
+        if (index >= startIndex && index < endIndex) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    // Aggiorna la visualizzazione del pulsante "Precedente"
+    if (currentPage === 0) {
+        prevButton.style.display = "none";
+    } else {
+      prevButton.style.cssText = buttonStyle;    }
+
+    // Aggiorna la visualizzazione del pulsante "Successivo"
+    if (currentPage === Math.ceil(skillsItems.length / skillsPerPage) - 1) {
+        nextButton.style.display = "none";
+    } else {
+      nextButton.style.cssText = buttonStyle;    }
+}
+
+// Inizialmente, nascondi il pulsante "Precedente" finché non si scorre
+prevButton.style.display = "none";
+
+// Aggiorna la visualizzazione iniziale dei pulsanti
+updateSkills();
+
+
+
+
+
+

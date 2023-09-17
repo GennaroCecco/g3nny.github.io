@@ -942,6 +942,49 @@ main {
   margin-bottom: 10px;
 }
 
+.service-icon-box img {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-icon-box img {
+  transform: scale(1.2); /* Effetto di zoom fluido */
+}
+
+
+.skills-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-list2 {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.prev-button,
+.next-button {
+  padding: 8px 16px;
+  background-color: var(--onyx);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block; /* Aggiungi questa regola per posizionarli sulla stessa riga */
+  border-radius: 10px
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #0056b3;
+}
+
 .project-item { display: none; }
 
 .project-item.active {
@@ -958,7 +1001,7 @@ main {
 
 .project-img {
   position: relative;
-  width: 100%;
+  width: 30%;
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
