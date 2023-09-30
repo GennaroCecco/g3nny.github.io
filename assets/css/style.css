@@ -356,7 +356,12 @@ main {
   padding: 3px 12px;
   border-radius: 8px;
 }
-
+.fraseMotivazionale {
+  color: var(--white-1);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  font-style: italic;
+}
 .info_more-btn {
   position: absolute;
   top: -15px;
