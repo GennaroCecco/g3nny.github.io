@@ -159,7 +159,7 @@ Web developer
           </li>
           
           <li class="social-item">
-            <a href="https://github.com/GennaroCecco/g3nnyWebSite/blob/main/CV_CECCO_GENNARO.pdf" download="CV_CECCO_GENNARO.pdf" class="social-link">
+            <a href="#" id="downloadLink" class="social-link">
               <ion-icon name="code-download-outline"></ion-icon>
             </a>
           </li>
@@ -169,7 +169,25 @@ Web developer
 
     </aside>
 
+<script>
 
+document.getElementById('downloadLink').addEventListener('click', function() {
+  // Crea un oggetto di ancoraggio temporaneo
+  var tempLink = document.createElement('a');
+  tempLink.href = 'link_al_tuo_file.pdf';
+  tempLink.download = 'Il_Tuo_Curriculum.pdf';
+
+  // Aggiungi l'ancora temporanea al documento
+  document.body.appendChild(tempLink);
+
+  // Simula un clic sull'ancora temporanea per avviare il download
+  tempLink.click();
+
+  // Rimuovi l'ancora temporanea dal documento
+  document.body.removeChild(tempLink);
+
+});
+</script>
 
 
 
