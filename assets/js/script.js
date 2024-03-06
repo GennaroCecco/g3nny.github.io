@@ -3,8 +3,8 @@
 
 
 
-// element toggle function
-//const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+//element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 
 
@@ -14,19 +14,15 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { 
-  //elementToggleFunc(sidebar); 
+  elementToggleFunc(sidebar); 
+  console.log("test");
 });
-
-
-
-
-
 
 
 // custom select variables
 const select = document.querySelector("[data-page]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-//const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 
@@ -61,7 +57,7 @@ for (let i = 0; i < filterBtn.length; i++) {
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
-
+    console.log("test");
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
